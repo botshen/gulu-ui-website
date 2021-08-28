@@ -17,14 +17,7 @@ async function handleRequest(request: Request) {
   }
 
   return new Response(
-    `<html>
-      <head>
-        <link rel="stylesheet" href="style.css" />
-      </head>
-      <body>
-        <h1>Example</h1>
-      </body>
-    </html>`,
+    fs.readFileSync('./index.html'),
     {
       headers: {
         "content-type": "text/html; charset=utf-8",
