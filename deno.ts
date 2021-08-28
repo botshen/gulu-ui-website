@@ -15,16 +15,16 @@ async function handleRequest(request: Request) {
     // to the client.
     return fetch(style);
   }
-  if (pathname.startsWith("/index.html")) {
-    //  Construct a new URL to style.css by using the URL
-    //  of the script (mod.ts) as base (import.meta.url).
-    const index = new URL("index.html", import.meta.url);
-    // Fetch the asset and return the fetched response
-    // to the client.
-    return fetch(index);
-  }
+
   return new Response(
- index,
+    `<html>
+      <head>
+        <link rel="stylesheet" href="style.css" />
+      </head>
+      <body>
+        <h1>Example</h1>
+      </body>
+    </html>`,
     {
       headers: {
         "content-type": "text/html; charset=utf-8",
