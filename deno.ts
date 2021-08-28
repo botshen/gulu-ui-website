@@ -1,3 +1,4 @@
+var fs = require('fs')
 async function handleRequest(request: Request) {
   const { pathname } = new URL(request.url);
   console.log(pathname)
